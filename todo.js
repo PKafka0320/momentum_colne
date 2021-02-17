@@ -8,7 +8,6 @@ let toDos = [];
 
 function rebuildHtml() {
   let listLength = toDos.length;
-  console.log(listLength);
   for (let i = 0; i < listLength; i++) {
     toDoList.removeChild(toDoList.children[0]);
   }
@@ -16,7 +15,7 @@ function rebuildHtml() {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
-    delBtn.innerText = "X";
+    delBtn.innerText = "✖";
     delBtn.addEventListener("click", deleteToDo);
     span.innerText = toDo.text;
     li.appendChild(delBtn);
@@ -56,7 +55,7 @@ function paintToDo(text) {
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = toDos.length + 1;
-  delBtn.innerText = "X";
+  delBtn.innerText = "✖";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
